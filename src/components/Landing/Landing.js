@@ -23,7 +23,7 @@ class Landing extends Component {
 		ev.preventDefault();
 		const { email, password } = this.state;
 		axios
-			.post('auth/login', { email, password })
+			.post('/auth/login', { email, password })
 			.then((res) => {
 				this.props.loginUser(res.data);
 				this.props.history.push('/dashboard');

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getUser } from '../../redux/reducer';
 
 class Dashboard extends Component {
+	componentDidMount() {
+		this.props.getUser();
+	}
 	render() {
 		return <div>Dashboard</div>;
 	}
@@ -9,4 +13,4 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps, { getUser })(Dashboard);

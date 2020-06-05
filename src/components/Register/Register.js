@@ -23,7 +23,7 @@ class Register extends Component {
 		ev.preventDefault();
 		const { email, password } = this.state;
 		axios
-			.post('auth/register', { email, password })
+			.post('/auth/register', { email, password })
 			.then((res) => {
 				this.props.loginUser(res.data);
 				this.props.history.push('/dashboard');
